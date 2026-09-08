@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Agence IA — Chatbots, automatisation et analyse de données. Déploiement rapide et ROI mesurable." />
+  <title>Site Agence IA — sidibemichel</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta property="og:title" content="Site Agence IA — sidibemichel" />
+  <meta property="og:description" content="Chatbots, Automatisation, Analyse de données. Déploiement rapide et résultats mesurables." />
+  <meta property="og:type" content="website" />
+</head>
+<body>
+  <a href="#top" class="to-top" aria-label="Retour en haut">↑</a>
+
+  <header class="nav-wrap">
+    <div class="container nav">
+      <a class="brand" href="#top"><span class="brand-mark">◆</span><span class="brand-text">Site Agence IA</span></a>
+      <nav id="navMenu" class="nav-menu">
+        <a href="#services">Services IA</a>
+        <a href="#about">À propos</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact" class="nav-cta">Demander un devis</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="pill"><span class="pill-dot"></span>Agence IA • Chatbots • Automatisation • Data</div>
+          <h1>Transformez vos processus avec <span class="grad">l’Intelligence Artificielle</span></h1>
+          <p class="lead">Nous concevons et déployons des solutions IA qui améliorent votre support, automatisent vos opérations et donnent des décisions basées sur les données.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Parler à un expert</a>
+            <a class="btn btn-ghost" href="#portfolio">Voir le portfolio</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-inner">
+            <h2 class="card-title">Contact Rapide</h2>
+            <div class="card-contact">
+              <div class="mini"><span class="mini-label">Téléphone</span><span class="mini-value">55061653</span></div>
+              <div class="mini"><span class="mini-label">Email</span><span class="mini-value">sidibemichel@gmail.com</span></div>
+            </div>
+            <a class="btn btn-primary btn-full" href="#contact">Demander un devis</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <div class="container">
+        <h2>Services IA</h2>
+        <div class="cards">
+          <article class="card"><div class="icon">💬</div><h3>Chatbots & Assistants IA</h3><p>Support client 24/7, qualification de leads, FAQ intelligente.</p></article>
+          <article class="card"><div class="icon">⚙️</div><h3>Automatisation & Agents</h3><p>Workflows multi-outils, agents IA avec garde-fous, gain de temps.</p></article>
+          <article class="card"><div class="icon">📊</div><h3>Analyse de données</h3><p>Tableaux de bord, prévisions, scoring et reporting automatisé.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section section-alt">
+      <div class="container">
+        <h2>À propos</h2>
+        <p>Nous construisons des solutions IA fiables et orientées résultats. Basés à Gabès, Tunisie. Expertise: GPT-4, LangChain, Python, n8n.</p>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <h2>Portfolio</h2>
+        <div class="cards">
+          <article class="card"><h3>Chatbot E-commerce</h3><p>+40% de conversion</p></article>
+          <article class="card"><h3>Automatisation RH</h3><p>Tri de 500 CV/jour</p></article>
+          <article class="card"><h3>Analyse Prédictive</h3><p>Prévision des ventes</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <h2>Contactez-nous</h2>
+        <form name="contact" method="POST" data-netlify="true">
+          <input type="text" name="nom" placeholder="Votre nom" required>
+          <input type="email" name="email" placeholder="Votre email" required>
+          <input type="tel" name="tel" placeholder="55061653">
+          <textarea name="message" placeholder="Décrivez votre projet" rows="5" required></textarea>
+          <button type="submit" class="btn btn-primary">Envoyer</button>
+        </form>
+        <div class="contact-info">
+          <p><strong>Tél:</strong> 55061653</p>
+          <p><strong>Email:</strong> sidibemichel@gmail.com</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container"><p>© 2026 Site Agence IA - sidibemichel. Tous droits réservés.</p></div>
+  </footer>
+  <script>
+    // Menu mobile simple
+    document.querySelector('.nav-toggle')?.addEventListener('click', () => {
+      document.getElementById('navMenu').classList.toggle('open')
+    })
+  </script>
+</body>
+</html>
