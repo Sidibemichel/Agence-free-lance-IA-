@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Agence Freelance IA : sites web modernes, automatisation et solutions IA pour les entreprises.">
+  <title>Agence Freelance IA — Sites Web & Automatisation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="#accueil">Agence <span>Freelance IA</span></a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#methode">Méthode</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <section id="accueil" class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Sousse · Tunisie</p>
+        <h1>Votre entreprise, <span>augmentée par l’IA.</span></h1>
+        <p class="lead">Sites web professionnels, automatisations et solutions IA conçues pour vous faire gagner du temps et développer votre activité.</p>
+        <div class="actions">
+          <a class="btn primary" href="#contact">Parler de mon projet</a>
+          <a class="btn secondary" href="#services">Découvrir les services</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="orb">AI</div>
+        <p>Web · Automatisation · IA</p>
+        <strong>Des outils simples pour des résultats concrets.</strong>
+      </div>
+    </section>
+    <section id="services" class="section">
+      <p class="eyebrow">Nos services</p>
+      <h2>Tout ce qu’il faut pour passer au niveau supérieur.</h2>
+      <div class="grid">
+        <article><b>01</b><h3>Sites Web</h3><p>Sites vitrines rapides, modernes, responsives et optimisés pour convertir vos visiteurs en clients.</p></article>
+        <article><b>02</b><h3>Automatisation</h3><p>Automatisez les tâches répétitives : prospects, emails, notifications, formulaires et workflows.</p></article>
+        <article><b>03</b><h3>Solutions IA</h3><p>Chatbots et assistants IA pour répondre, qualifier les demandes et améliorer l’expérience client.</p></article>
+        <article><b>04</b><h3>Acquisition</h3><p>SEO et campagnes digitales pour augmenter votre visibilité et attirer davantage de prospects.</p></article>
+      </div>
+    </section>
+    <section id="methode" class="section dark">
+      <p class="eyebrow">Notre méthode</p>
+      <h2>Simple, rapide, orientée résultats.</h2>
+      <div class="steps">
+        <div><span>1</span><h3>On échange</h3><p>Nous définissons votre besoin et votre objectif.</p></div>
+        <div><span>2</span><h3>On construit</h3><p>Nous développons une solution adaptée à votre activité.</p></div>
+        <div><span>3</span><h3>On déploie</h3><p>Votre projet est mis en ligne et prêt à évoluer.</p></div>
+      </div>
+    </section>
+    <section id="contact" class="section contact">
+      <div>
+        <p class="eyebrow">Un projet ?</p>
+        <h2>Construisons quelque chose d’utile.</h2>
+        <p>Décrivez-nous votre idée. Nous vous aiderons à transformer votre besoin en solution web ou IA.</p>
+      </div>
+      <form onsubmit="sendContact(event)">
+        <input id="name" required placeholder="Votre nom" aria-label="Votre nom">
+        <input id="email" type="email" required placeholder="Votre email" aria-label="Votre email">
+        <textarea id="message" required placeholder="Parlez-nous de votre projet" aria-label="Votre projet"></textarea>
+        <button class="btn primary" type="submit">Envoyer la demande</button>
+      </form>
+    </section>
+  </main>
+  <footer><p>© <span id="year"></span> Agence Freelance IA — Tous droits réservés.</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>
