@@ -1,11 +1,9 @@
-document.getElementById("year").textContent=new Date().getFullYear();
-
-function sendContact(event){
-  event.preventDefault();
-  const name=document.getElementById("name").value.trim();
-  const email=document.getElementById("email").value.trim();
-  const message=document.getElementById("message").value.trim();
-  const subject=encodeURIComponent("Nouveau projet - Agence Freelance IA");
-  const body=encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\nProjet:\n${message}`);
-  window.location.href=`mailto:contact@votre-domaine.com?subject=${subject}&body=${body}`;
-}
+const products=[{id:1,name:"Sac Urban",price:49.9,cat:"mode",img:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=80"},{id:2,name:"Lampe Minimal",price:39.9,cat:"maison",img:"https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=80"},{id:3,name:"Casque Audio",price:79.9,cat:"tech",img:"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80"},{id:4,name:"Montre Classic",price:89.9,cat:"mode",img:"https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=900&q=80"},{id:5,name:"Chaise Design",price:129.9,cat:"maison",img:"https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=900&q=80"},{id:6,name:"Enceinte Mini",price:59.9,cat:"tech",img:"https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=900&q=80"}];
+const euro=n=>n.toFixed(2).replace(".",",")+" €";
+function card(p){return `<article class="card"><a href="produit.html?id=${p.id}"><img src="${p.img}" alt="${p.name}"></a><div class="card-body"><h3>${p.name}</h3><p class="price">${euro(p.price)}</p><button class="btn" onclick="add(${p.id})">Ajouter au panier</button></div></article>`}
+function add(id){let c=JSON.parse(localStorage.getItem("cart")||"[]");c.push(id);localStorage.setItem("cart",JSON.stringify(c));updateCount();alert("Produit ajouté au panier.")}
+function updateCount(){const e=document.querySelector("#cart-count");if(e)e.textContent=(JSON.parse(localStorage.getItem("cart")||"[]")).length}
+function render(list,id){const e=document.querySelector(id);if(e)e.innerHTML=list.map(card).join("")}
+function init(){updateCount();render(products.slice(0,3),"#featured");render(products,"#products");const s=document.querySelector("#search"),cat=document.querySelector("#category");if(s&&cat){const f=()=>render(products.filter(p=>(cat.value==="all"||p.cat===cat.value)&&p.name.toLowerCase().includes(s.value.toLowerCase())),"#products");s.oninput=f;cat.onchange=f}
+const d=document.querySelector("#product-detail");if(d){const id=Number(new URLSearchParams(location.search).get("id"))||1,p=products.find(x=>x.id===id)||products[0];d.innerHTML=`<div class="product-detail"><img src="${p.img}" alt="${p.name}"><div><span class="eyebrow">PRODUIT</span><h1>${p.name}</h1><p class="price">${euro(p.price)}</p><p class="muted">Un produit sélectionné pour combiner style, qualité et simplicité.</p><button class="btn" onclick="add(${p.id})">Ajouter au panier</button></div></div>`}
+const ci=document.querySelector("#cart-items");if(ci){const c=JSON.parse(localStorage.getItem("cart")||"[]"),items=c.map(id=>products.find(p=>p.id===id)).filter(Boolean);ci.innerHTML=items.length?items.map(p=>`<div class="cart-row"><img src="${p.img}" alt=""><div class="grow"><strong>${p.name}</strong><div>${euro(p.price)}</div></div></div>`).join(""):'<p class="muted">Votre panier est vide.</p>';const t=document.querySelector("#cart-total");if(t)t.textContent="Total : "+euro(items.reduce((s,p)=>s+p.price,0))}}init();
